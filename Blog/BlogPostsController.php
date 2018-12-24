@@ -9,6 +9,8 @@ use App\Custom\BlogPostHelper;
 use Auth;
 use Session;
 
+use App\User;
+
 class BlogPostsController extends Controller
 {
 
@@ -39,7 +41,7 @@ class BlogPostsController extends Controller
         $page_title = $post->title;
 
         // Return view
-        return view('pages.view-post')->with('page_title', $page_title)->with('page_header')->with('post', $post);
+        return view('pages.view-post')->with('page_title', $page_title)->with('page_header', $page_header)->with('post', $post);
     }
 
     public function update(Request $data) {

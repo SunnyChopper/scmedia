@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
 				<div id="post-body">
-					{!! $post->post !!}
+					{!! $post->body !!}
 				</div>
 			</div>
 		</div>
@@ -20,9 +20,9 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
 				<hr />
-				<?php $user = User::find($post->author_id); ?>
+				<?php $user = App\User::find($post->author_id); ?>
 				@if(isset($user->first_name))
-					<p><small>Written by {{ $uesr->first_name }} on {{ $post->created_at->format('M d Y') }}</small></p>
+					<p><small>Written by {{ $user->first_name }} on {{ $post->created_at->format('M d Y') }}</small></p>
 				@else
 					<p><small>Written by {{ $uesr->name }} on {{ $post->created_at->format('M d Y') }}</small></p>
 				@endif

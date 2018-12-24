@@ -1,5 +1,4 @@
 <?php
-
 	if (!file_exists('../app/Http/Controllers/AdminController.php')) {
 		echo "Please first install the Admin dependency.\n";
 		exit;
@@ -30,6 +29,18 @@
 
 	// Create controller by copying over
 	copy(dirname(__FILE__) . '/BlogPostsController.php', '../app/Http/Controllers/BlogPostsController.php');
+
+	// Create model by copying over
+	copy(dirname(__FILE__) . '/BlogPost.php', '../app/BlogPost.php');
+
+	// Create Custom folder if does not exist
+	$dir = "../app/Custom";
+	if (!file_exists($dir) && !is_dir($dir)) {
+	    mkdir($dir);
+	}
+
+	// Create helper class
+	copy(dirname(__FILE__) . '/BlogPostHelper.php', $dir . '/BlogPostHelper.php');
 
 	// Create pages folder if does not exist
 	$dir = "../resources/views/pages";

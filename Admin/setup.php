@@ -32,7 +32,7 @@
 	}
 
 	// Create views
-	copy(dirname(__FILE__) . '/views/login.bladel.php', $dir . "/login.blade.php");
+	copy(dirname(__FILE__) . '/views/login.blade.php', $dir . "/login.blade.php");
 	copy(dirname(__FILE__) . '/views/dashboard.blade.php', $dir . "/dashboard.blade.php");
 
 	// Create table
